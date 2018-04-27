@@ -1,0 +1,70 @@
+<resources>
+
+    <string name="app_name">O2</string>
+    <string name="SetTag">音楽情報の編集</string>
+    <string name="Title">タイトル</string>
+    <string name="Artist">アーティスト</string>
+    <string name="Album">アルバム</string>
+    <string name="AlbumArtist">アルバムアーティスト</string>
+    <string name="Genre">ジャンル</string>
+    <string name="Year">年</string>
+    <string name="Season">季節</string>
+    <string name="SetYomi">よみがなの設定</string>
+    <string name="Yomi_Title">たいとる</string>
+    <string name="Yomi_Artist">あーてぃすと</string>
+    <string name="Yomi_Album">あるばむ</string>
+    <string name="Yomi_AlbumArtist">あるばむあーてぃすと</string>
+    <string name="Yomi_Genre">じゃんる</string>
+
+    <!-- 使用規約書の改訂番号。内容の変更をこれで認識するので、小さな内容でも変更したら必ずインクリメントすること -->
+    <integer name="agreementVersion">3</integer>
+
+    <string name="WelcomeO2">O2へようこそ！</string>
+    <string name="eulaTitle">使用規約\n</string>
+    <string name="eula_zenza">マエフリ</string>
+    <string name="eula_zenza2">あなたがO2を使う上で、\n私たち開発チームと約束してほしい大切なことを伝えます。\n</string>
+    <string name="eula_sec1Title">1.このアプリは無料です</string>
+    <string name="eula_sec1">\t\tこのアプリには広告がありません。\n\t\t最初からすべての機能が無料で使えます。\n</string>
+    <string name="eula_sec2Title">2.けれども……</string>
+    <string name="eula_sec2">\t\t私たち開発チームは、音楽アプリが直接、あるいは間接的な原因となって、あなたやその周りの人たちに不幸な出来事が起こることを良しとしません。\n\t\t交通事故はその最たる例です。\n</string>
+    <string name="eula_sec3Title">3.あなたにお願いしたいこと</string>
+    <string name="eula_sec3">
+        \t\t音楽アプリの使用にあたって、あなたが継続して周囲に十分配慮し、安全な環境で使用してください。\n
+        \t\tこの規約での「音楽アプリ」には、O2以外の音楽アプリ・プレイヤーも含まれます。\n
+        \t\tO2に搭載された機能のすべては、安全を確保することを目的として設計・実装されたものではありません。\n
+    </string>
+    <string name="eula_sec4Title">4.してはいけないこと</string>
+    <string name="eula_sec4">
+        \t\t開発チームによって特別に認められた場合を除き、以下のことをしてはいけません。\n
+        \t\t・このアプリを販売すること。\n
+        \t\t・意図して周囲や安全に配慮せず音楽アプリを使用すること。\n
+    </string>
+    <string name="eula_sec5Title">5.免責事項\n</string>
+    <string name="eula_sec5">
+        \t\tこのアプリは現状のまま提供され、開発チームはバグ・不具合・期待と異なる動作等に関して修正する義務を持ちません。\n
+        \n
+        \t\tO2をアンインストール・使用することなどで生じた、直接的、間接的なあらゆる損害や、その他逸失利益などすべてに関して、私たち開発チームはいかなる保証や賠償を行いません。\n
+        \t\tまた、開発チームによる機能の追加や更新があった際に生じた不利益等についても、一切の補償や賠償は行いません。\n
+        \n
+        \t\tつまり、O2に関連してなにか残念なことが起きても、私たち開発チームは一切関知しません。\n
+        \t\tO2に関連して生じた問題は、すべてあなたの責任のもと、あなたの負担のもとで対処されるものとします。\n
+    </string>
+    <string name="eula_sec6Title">6.規約内容の更新・破棄等について\n</string>
+    <string name="eula_sec6">
+        \t\tこの使用規約の内容は、常に更新される可能性があり、あなたは常に最新の使用規約に同意する必要があります。\n
+        \n
+        \t\tまた、O2と連携した機能やサービス等に別途、規約・契約等への同意が必要な場合、利用するためには、あなたはそれに追加で同意し尊守する必要があります。\n
+        \t\tこの使用規約と、O2と連携した機能やサービス等に別途定められている規約・契約等の内容が相容れない場合、相容れない箇所において、連携した機能やサービスに定められた規約を優先して尊守するものとします。\n
+        \n
+        \t\tあなたがこの使用規約に同意する意思をボタンの押下で示した時点で、この規約の同意は有効になります。\n
+        \t\tあなたがO2をアンインストール、O2が保存するシステムデータを完全に消去する動作が完了した時点で、あなたの規約への同意は解除されます。\n
+        \t\tまた、この規約は開発チームの判断で解除・破棄される場合があります。\n
+    </string>
+    <string name="readChk">上記の内容をすべて読みました</string>
+    <string name="agree">同意する</string>
+    <string name="disagree">同意しない</string>
+
+    <string name="title_activity_sprash">sprashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

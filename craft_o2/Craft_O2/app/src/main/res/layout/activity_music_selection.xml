@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	app:layout_behavior="@string/appbar_scrolling_view_behavior"
+	android:orientation="vertical"
+	tools:context=".Activities.MusicSelectionActivity">
+
+
+    <android.support.design.widget.AppBarLayout
+
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/AppTheme.AppBarOverlay">
+
+		<android.support.v7.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="?attr/colorPrimary"
+			app:layout_scrollFlags="scroll|enterAlways"
+			android:popupTheme="@style/AppTheme.PopupOverlay"/>
+	</android.support.design.widget.AppBarLayout>
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+        <!-- なんかこう、下に引っ張るとなんか処理できるやつ -->
+		<!--<android.support.v4.widget.SwipeRefreshLayout-->
+            <!--android:id="@+id/SwipeRefresh"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+		<!-- 曲選択画面 -->
+            <LinearLayout
+                android:id="@+id/listSelectionArea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.design.widget.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/AppTheme.AppBarOverlay">
+
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </android.support.design.widget.AppBarLayout>
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                </android.support.v4.view.ViewPager>
+
+            </LinearLayout>
+        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+        <!-- オリジナル通知領域 -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:id="@+id/notification_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#C0FFFFFF"
+                android:text=""
+                android:textColor="@color/colorNowPlaying"
+                android:layout_gravity="right|bottom"
+				android:textAlignment="textEnd"
+                android:layout_marginBottom="75dp"
+                android:paddingRight="6dp"
+                android:paddingLeft="6dp"
+                android:visibility="invisible"
+                />
+        </FrameLayout>
+
+		<!-- 再生画面のフラグメント -->
+		<LinearLayout
+			android:id="@+id/playerContainer"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_gravity="bottom">
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical">
+
+                <View
+					android:id="@+id/player_separator"
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:background="#DDDDDD" />
+				<fragment
+					android:id="@+id/playerFragment"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+                    android:name="com.corleois.craft.craft_o2.Activities.fragments.MusicPlayerFragment"/>
+
+			</LinearLayout>
+		</LinearLayout>
+	</FrameLayout>
+</LinearLayout>
+

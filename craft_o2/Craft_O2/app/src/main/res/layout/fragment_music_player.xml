@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	AndroidStudioのPreview機能で見るとえげつないくらいレイアウトが崩れているけど
+	javaの方でレイアウトを調整するので気にしなくて大丈夫です。
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<LinearLayout
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+
+		<!-- アルバムアートワーク -->
+		<RelativeLayout
+			android:id="@+id/gestureArea_albumArt"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:splitMotionEvents="false">
+			<ImageView
+				android:id="@+id/albumArt_prev"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scaleType="fitCenter"
+				android:visibility="invisible" />
+			<ImageView
+				android:id="@+id/albumArt_next"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scaleType="fitCenter"
+				android:visibility="invisible"
+/>
+			<ImageView
+				android:id="@+id/albumArt_current"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scaleType="fitCenter"
+/>
+		</RelativeLayout>
+
+		<!-- タイトル・アーティスト名 -->
+		<LinearLayout
+			android:id="@+id/unit_title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_gravity="bottom">
+			<TextView
+				android:id="@+id/title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textAlignment="center"
+				android:paddingBottom="8dp"
+				android:textSize="30dp"
+				android:text="タイトル"/>
+			<TextView
+				android:id="@+id/artist"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textAlignment="center"
+				android:paddingBottom="8dp"
+				android:textSize="30dp"
+				android:text="アーティスト"/>
+		</LinearLayout>
+
+		<!-- 再生位置(シークバー) -->
+		<LinearLayout
+			android:id="@+id/unit_seekBar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_gravity="bottom"
+			android:background="#A0EEEEEE"
+            android:paddingTop="4dp"
+			>
+<!-- ここの色とパディングいじった　きょーじゅ -->
+			<TextView
+				android:id="@+id/nowTimeTextView"
+				android:layout_width="36dp"
+				android:layout_height="wrap_content"
+				android:textAlignment="viewEnd"
+				android:text="0:00"/>
+
+			<SeekBar
+				android:id="@+id/seekBar"
+				android:layout_weight="1"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"/>
+
+			<TextView
+				android:id="@+id/maxTimeTextView"
+				android:layout_width="36dp"
+				android:layout_height="wrap_content"
+				android:text="4:00"/>
+		</LinearLayout>
+
+		<!-- 操作部 -->
+		<RelativeLayout
+			android:id="@+id/unit_operations"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+            >
+<!-- 高さを90→80dpにいじった　きょーじゅ -->
+			<!-- [再生/一時停止]ボタン -->
+			<ImageButton
+				android:id="@+id/playButton"
+				android:layout_width="90dp"
+				android:layout_height="80dp"
+				android:background="@null"
+				android:scaleType="fitCenter"
+				app:srcCompat="@android:drawable/ic_media_play"
+				android:layout_centerHorizontal="true"/>
+
+			<!-- [前の曲]ボタン -->
+			<ImageButton
+				android:id="@+id/prevButton"
+				android:layout_width="64dp"
+				android:layout_height="80dp"
+				android:layout_toLeftOf="@id/playButton"
+				android:background="@null"
+				android:scaleType="fitCenter"
+				app:srcCompat="@android:drawable/ic_media_previous"/>
+
+			<!-- [次の曲]ボタン -->
+			<ImageButton
+				android:id="@+id/nextButton"
+				android:layout_width="64dp"
+				android:layout_height="80dp"
+				android:layout_toRightOf="@id/playButton"
+				android:background="@null"
+				android:scaleType="fitCenter"
+				app:srcCompat="@android:drawable/ic_media_next"/>
+
+			<!-- シャッフルボタン -->
+			<ImageButton
+				android:id="@+id/shuffButton"
+				android:layout_width="32dp"
+				android:layout_height="80dp"
+				android:layout_marginRight="12dp"
+				android:layout_toLeftOf="@id/prevButton"
+				android:background="@null"
+				android:scaleType="fitCenter"
+				app:srcCompat="@drawable/shuffle1_off"/>
+
+			<!-- リピートボタン -->
+			<ImageButton
+				android:id="@+id/loopButton"
+				android:layout_width="32dp"
+				android:layout_height="80dp"
+				android:layout_marginLeft="12dp"
+				android:layout_toRightOf="@id/nextButton"
+				android:background="@null"
+				android:scaleType="fitCenter"
+				app:srcCompat="@drawable/replay_off"/>
+		</RelativeLayout>
+	</FrameLayout>
+
+	<!-- 設定 -->
+	<LinearLayout
+		android:id="@+id/unit_settings"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_gravity="bottom"
+		android:visibility="visible">
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="2dp"
+			android:background="#DDDDDD" />
+
+		<LinearLayout
+			android:id="@+id/one_ear_mode"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="12dp"
+			android:background="@drawable/background_setting_click"
+			android:orientation="horizontal">
+			<TextView
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:textSize="16sp"
+				android:text="片耳モード"/>
+			<ImageView
+				android:id="@+id/ear_left"
+				android:layout_width="24sp"
+				android:layout_height="24sp"
+				android:layout_gravity="center_vertical"
+				app:srcCompat="@drawable/ear_left"/>
+			<ImageView
+				android:id="@+id/ear_right"
+				android:layout_width="24sp"
+				android:layout_height="24sp"
+				android:layout_gravity="center_vertical"
+				app:srcCompat="@drawable/ear_right"/>
+		</LinearLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="#DDDDDD" />
+
+		<Switch
+			android:id="@+id/private_mode"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="12dp"
+			android:background="@drawable/background_setting_click"
+			android:textSize="16sp"
+			android:textColor="#888888"
+			android:text="プライベートモード"/>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="#DDDDDD" />
+
+		<TextView
+			android:id="@+id/equalizer"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="12dp"
+			android:background="@drawable/background_setting_click"
+			android:textSize="16sp"
+			android:text="イコライザー"/>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="#DDDDDD" />
+
+		<TextView
+			android:id="@+id/tagEdit"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="12dp"
+			android:background="@drawable/background_setting_click"
+			android:textSize="16sp"
+			android:text="タグ編集"/>
+	</LinearLayout>
+</LinearLayout>
+
+    <!-- スプラッシュ画面 -->
+    <TextView
+        android:id="@+id/sprash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="200sp"
+        android:textStyle="bold"
+        android:background="#FFFFFF"/>
+</FrameLayout>
